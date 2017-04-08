@@ -1,0 +1,102 @@
+.main-body {
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+
+	overflow: hidden;
+}
+
+.main-body .row {
+	height: 100%;
+}
+
+.main-text-body {
+	background-color: white;
+	position: absolute;
+	top: 53px;
+	bottom: 0;
+	right: 0;
+	z-index: 0;
+	padding: 20px;
+	overflow-x: hidden;
+	overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+
+	margin-bottom: 0px;
+	height: 100%;
+}
+
+.blist {
+
+}
+
+.blist .well {
+	margin: 5px;
+	border: 4px solid black;
+	background: white;
+	padding: 2px;
+}
+
+.blist .well.blist-well-inside {
+	background: black;
+	margin: 0;
+}
+
+.blist-title {
+	color: white;
+	font-family: 'Bitter', serif;
+	font-size: 2em;
+}
+
+.blist-title .blist-click:hover, .blist-title .blist-click:click, .blist-title .blist-click:active {
+	font-weight: bold;
+}
+
+.blist-right {
+	float: right;
+}
+
+.blist-who {
+	color: white;
+	font-size: 0.7em;
+	font-family: 'Play', sans-serif;
+}
+
+.blist-time {
+	color: white;
+	font-size: 0.7em;
+	font-family: 'Open Sans Condensed', sans-serif;
+	padding-right: 5px;
+}
+
+
+.blog-list {
+
+}
+
+
+.blog-block {
+
+}
+
+.blog-title {
+
+}
+
+.blog-who {
+
+}
+
+.blog-meta {
+
+}
+
+.blog-main {
+
+}
+
+.blog-files {
+
+}

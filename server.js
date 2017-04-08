@@ -13,14 +13,23 @@ var port = process.env.PORT || 8080;
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
+// app.set('views', __dirname + '/views'));  
 
 // Static
 app.use('/public/blog', express.static('public/blog'));
 app.use('/public/home', express.static('public/home'));
 
 app.use(cookieParser());
-app.use(bodyParser());
-app.use(session(require('./config/blog/session')));
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(session(require('./config/blog/session.js')));
+
+// Database
+var blogDB = require('./config/blog/database.js');
+mongoose.connect(blogDB.url);
+var db = mongoose.connection;
+db.on('error', function() {});
+db.once('open', function() {});
 
 // Setup Passport.js
 (require('./config/blog/passport.js'))(passport);

@@ -1,0 +1,97 @@
+.sidebar {
+	background-color: black;
+	position: absolute;
+	top: 53px;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	padding-top: 20px;
+	overflow-x: hidden;
+	overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+
+	/*margin-bottom: 0px;*/
+	height: 100%;
+}
+
+.sidebar .nav-stacked {
+	padding-bottom: 60px;
+}
+
+.sidebar-upper {
+	z-index: 2;
+}
+
+.sidebar-lr-center {
+	/*margin-left: auto;
+	margin-right: auto;*/
+	/*display: block;*/
+	padding-left: 15%;
+	padding-right: 15%;
+	/*margin: auto;*/
+}
+
+.sidebar-img-container {
+	position: relative;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 80%;
+}
+
+.sidebar-img-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sidebar-img-container p {
+    text-align: center;
+    font-size: 4em;
+    color: black;
+}
+
+.sidebar-lower {
+	z-index: 1;
+}
+
+.sidebar-h1 {
+	font-size: 3em;
+	color: white;
+	text-align: center;
+	font-family: 'Play', sans-serif; 
+}
+
+.sidebar-h2 {
+	font-size: 1.5em;
+	color: white;
+	text-align: center;
+	font-family: 'Play', sans-serif; 
+}
+
+
+.btn.white-outline {
+	background: none;
+	padding: 5px 10px;
+
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 5%;
+	width: 80%;
+
+	font-family: 'Play', sans-serif; 
+	font-size: 2em;
+}
+.btn-primary.white-outline {
+	border: 4px solid #ededed;
+	color: #ededed;
+}
+.btn-primary.white-outline:hover, .btn-primary.white-outline:focus, .btn-primary.white-outline:active, .btn-primary.white-outline.active {
+	color: white;
+	background-color:rgba(0, 0, 0, 0);
+	border-color: white;
+}
+.btn-primary.white-outline:active, .btn-primary.white-outline.active {
+	border-color: #ededed;
+	color: #ededed;
+	box-shadow: none;
+}

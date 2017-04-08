@@ -1,0 +1,41 @@
+.navbar.navbar-fixed-top {
+	margin-bottom: 0px;
+}
+
+.navbar.navbar-fixed-top p {
+	padding-right: 10px;
+	font-family: 'Open Sans Condensed', serif;
+	font-size: 1.2em;
+	color: white;
+}
+
+.navbar.navbar-fixed-top a:link {
+	font-family: 'Bitter', serif;
+	font-size: 1.5em;
+	color: white;
+}
+
+.navbar.navbar-fixed-top .navbar-header a:link {
+	font-family: 'Bitter', serif;
+	font-size: 2.5em;
+	color: white;
+}
+
+.navbar.navbar-fixed-top a:hover {
+	font-weight: bold;
+	color: white;
+}
+
+.navbar.navbar-fixed-top a:visited {
+	font-weight: bold;
+	color: white;
+}
+
+.brand {
+	font-family: 'Bitter', serif;
+	font-color: white;
+}
+
+.black-bg {
+	background-color: black;
+}

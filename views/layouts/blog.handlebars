@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Blog @ Iry.io</title>
+	<link rel="stylesheet" href="/public/blog/commons/css/navbar.css">
+	<link rel="stylesheet" href="/public/blog/commons/css/sidebar.css">
+	<link rel="stylesheet" href="/public/blog/commons/css/style.css">
+	<link rel="stylesheet" href="/public/blog/commons/css/pop.css">
+	
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Bitter|Crimson+Text|Open+Sans+Condensed:300|Play" rel="stylesheet">
+	<!-- 
+	font-family: 'Bitter', serif;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'Crimson Text', serif;
+	font-family: 'Play', sans-serif; 
+	-->
+</head>
+<body>
+<nav class="navbar navbar-fixed-top black-bg">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Iry.IO</a>
+		</div>
+		{{#if user}}
+		<p class="navbar-text navbar-right">Signed in as {{user.showname}} </p>
+		<button type="button" class="btn btn-default navbar-btn">Logout</button>
+		{{else}}
+		<p class="navbar-text navbar-right">Not Logged In</p>
+		{{/if}}
+	</div>
+</nav>
+<div class="container-fluid main-body">
+	<div class="row">
+		<div class="col-xs-3 col-sm-3 col-md-3 hidden-xs-down bg-faded sidebar">
+
+			{{#if user}}
+			<div class="sidebar-profile">
+				<div class="sidebar-img-container">
+					<img src="/public/blog/data/users/img/{{{user.name}}}.png" alt="WHITE_CIRCLE" class="sidebar-lower sidebar-lr-center">
+				</div>
+			</div>
+			<p class="sidebar-h2">Welcome,</p>
+			<p class="sidebar-h1">{{{user.name}}}</p>
+			
+			<ul class="nav nav-pills nav-stacked">
+				<li>
+					<button type="button" class="btn btn-primary white-outline">Post</button>
+				</li>
+				<li>
+					<button type="button" class="btn btn-primary white-outline">My Posts</button>
+				</li>
+				<li>
+					<button type="button" class="btn btn-primary white-outline">Liked</button>
+				</li>
+				<li>
+					<button type="button" class="btn btn-primary white-outline" onclick="logout();">Logout</button>
+				</li>
+			</ul>
+			{{else}}
+			<div class="sidebar-profile">
+				<div class="sidebar-img-container">
+					<img src="/public/blog/commons/img/user-icon.png" alt="WHITE_CIRCLE" class="sidebar-lower sidebar-lr-center">
+				</div>
+			</div>
+			<p class="sidebar-h2">Welcome,</p>
+			<p class="sidebar-h1">Tourist</p>
+			
+			<ul class="nav nav-pills nav-stacked">
+				<li>
+					<button type="button" class="btn btn-primary white-outline">Login</button>
+				</li>
+				<li>
+					<button type="button" class="btn btn-primary white-outline">Sign Up</button>
+				</li>
+			</ul>
+			{{/if}}
+		</div>
+
+
+		<div class="col-xs-9 col-sm-9 col-md-9 main-text-body">
+			<ul class="nav nav-pills nav-stacked blist">
+				<li class="well" onclick="">
+					<div class="well blist-well-inside">
+						<span class="blist-title">
+							Initial Blog
+							<span class="blist-right">
+								<span class="blist-who">Admin</span>
+								|
+								<span class="blist-time">April 10, 2017</span>
+							</span>
+						</span>
+					</div>
+				</li>
+				<li class="well" onclick="">
+					<div class="well blist-well-inside">
+						<span class="blist-title">
+							Second Blog
+							<span class="blist-right">
+								<span class="blist-who">Admin</span>
+								|
+								<span class="blist-time">April 10, 2017</span>
+							</span>
+						</span>
+					</div>
+				</li>
+			</ul>
+
+			{{!-- <div class="blogs">
+				<div class="blog-block">
+					<div class="blog-title">
+						Test Blog
+					</div>
+					<div class="blog-who">
+					</div>
+					<div class="blog-meta">
+						Time: April 1, 2017
+					</div>
+				</div>
+			</div> --}}
+
+
+			{{!-- {{{body}}} --}}
+		</div>
+	</div>
+</div>
+
+
+<form action="" method="post">
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+    <input type="checkbox" checked="checked"> Remember me
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+
+
+{{!-- <div class="container-fluid">
+<div class="row">
+    <div class="col-sm-3 col-md-6 col-lg-4 sidebar" style="background-color:yellow;">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+    <div class="col-sm-9 col-md-6 col-lg-8" style="background-color:pink;">
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+    </div>
+  </div>
+</div> --}}
+
+<script type="text/javascript" charset="utf-8">
+function logout() {
+	window.location = window.location + "logout";
+}
+</script>
+</body>
+</html>
